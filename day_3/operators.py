@@ -16,3 +16,8 @@
 # perimeter = print("The perimeter is: ", 2 * (length + width))
 
 # Example 4
+# print(len("python") != len(("dragon")), "on" in "python" and "on" in "dragon")
+
+# Example 5
+# year = int(input("Enter the years you have lived: "))
+# result = print("Your seconds is: ", year * 365 * 24 * 60 * 60)
