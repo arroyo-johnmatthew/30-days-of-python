@@ -21,3 +21,8 @@
 # Example 5
 # year = int(input("Enter the years you have lived: "))
 # result = print("Your seconds is: ", year * 365 * 24 * 60 * 60)
+
+# Example 6
+# hour = int(input("Enter your hours: "))
+# rate = float(input("What is the rate per hour: "))
+# result = print("Your earning is: ", hour * rate)
