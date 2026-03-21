@@ -260,3 +260,10 @@ countries = [
   'Zambia',
   'Zimbabwe'
 ];
+
+middle_country = len(countries) // 2
+print(countries[middle_country])
+print(countries[:middle_country])
+print(countries[middle_country:])
+
+first_country, second_country, third_country, *scandic_countries = countries
