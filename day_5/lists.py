@@ -50,6 +50,16 @@
 # Exercise 2
 
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-ages.sort()
+sorted_ages = sorted(ages)
+min_age = min(ages)
+max_age = max(ages)
+median = (sorted_ages[4] + sorted_ages[5]) / 2
+average = sum(sorted_ages) / len(sorted_ages)
 
-print(ages)
+print(sorted_ages)
+print(median)
+print(average)
+print(max_age - min_age)
+
+print(abs(min_age), abs(max_age))
+
