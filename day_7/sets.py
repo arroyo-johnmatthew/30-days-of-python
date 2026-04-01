@@ -40,3 +40,13 @@ A.symmetric_difference(B)
 
 # delete the sets
 del A, B
+
+# --------------------------- EXERCISE 3 -----------------------------------
+
+# turn list into set and compare list & set size
+set_of_ages = set(age)
+print(len(age) > len(set_of_ages))
+
+# find the unique word of
+sentence = "I am a teacher and I love to inspire and teach people."
+split_sentence = set(sentence.split())
