@@ -76,3 +76,42 @@
 # else:
 #     fruits.append(fruit)
 #     print("The modified fruit: ", fruits)
+
+# --------------------------- EXERCISE LEVEL 3 ---------------------------------
+
+person = {
+    "first_name": "John Matthew",
+    "last_name": "Arroyo",
+    "age": 21,
+    "country": "Philippines",
+    "is_married": False,
+    "skills": ["Node", "React", "MongoDB"],
+    "address": {
+        "street": "Grove Street",
+        "zipcode": 123,
+    }
+}
+
+skill = person["skills"]
+
+if person["skills"]:
+    if "Python" in person["skills"]:
+        print("There is python skill!\n")
+    else:
+        print("No python skills huhu")
+
+    if "Javascript" in skill and "React" in skill:
+        print("He is front end developer!")
+    elif "Node" in skill and "Python" in skill and "MongoDB" in skill:
+        print("He is a backend developer")
+    elif "React" in skill and "Node" in skill and  "MongoDB" in skill:
+        print("He is a fullstack developer")
+
+    print("The middle skill: ", person["skills"][2])
+
+if person["is_married"]:
+    print("Congrats")
+else:
+    print(person["first_name"], person["last_name"], "lives in the", person["country"])
+    print("Married: ", person["is_married"])
+
