@@ -1,16 +1,22 @@
 import random
 
-user_choice = input("Enter your choice (rock/paper/scissors): ").lower()
 computer = ("rock", "paper", "scissors")
-comp_choice = random.choice(computer)
+comp = random.choice(computer)
 
-if user_choice == "rock" and comp_choice == "scissors":
-    print("You won! computer chose", comp_choice)
-elif user_choice == "paper" and comp_choice == "rock":
-    print("You won! computer chose", comp_choice)
-elif user_choice == "scissors" and comp_choice == "paper":
-    print("You won! computer chose", comp_choice)
-elif user_choice == comp_choice:
-    print("Tie!")
-else:
-    print("You lose! computer chose", comp_choice)
+while True:
+    user = input("Enter your choice (rock/paper/scissors): ").lower()
+
+    if user not in computer:
+        print("Not a valid option. Try again")
+        continue
+
+    if user == "rock" and comp == "scissors":
+        print("You won! computer chose", comp)
+    elif user == "paper" and comp == "rock":
+        print("You won! computer chose", comp)
+    elif user == "scissors" and comp == "paper":
+        print("You won! computer chose", comp)
+    elif user == comp:
+        print("Tie!")
+    else:
+        print("You lose! computer chose", comp)
