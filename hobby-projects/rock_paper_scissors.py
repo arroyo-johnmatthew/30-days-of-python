@@ -4,7 +4,7 @@ computer = ("rock", "paper", "scissors")
 comp = random.choice(computer)
 
 while True:
-    user = input("Enter your choice (rock/paper/scissors): ").lower()
+    user = input("Enter your choice (rock 🪨 paper 📃 scissors ✂️): ").lower()
 
     if user not in computer:
         print("Not a valid option. Try again")
