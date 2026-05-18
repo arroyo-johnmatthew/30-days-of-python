@@ -3,9 +3,6 @@ import random
 # one live bullet in a gun
 chamber = [0, 0, 0, 0, 0, 1]
 
-# spins the chamber once (will spin again if the program runs again)
-random.shuffle(chamber)
-
 while True:
     choice = input("🔫 Fire a bullet? yes/no: ").lower()
     print("")
@@ -15,11 +12,8 @@ while True:
         break
 
     elif choice in ["yes", "y"]:
-        # picks a bullet from the chamber
-        bullet = random.randrange(len(chamber))
-    
-        # store it in a variable to check if the bullet fired is real or not
-        shot = chamber.pop(bullet)
+        # spins the chamber before getting a bullet
+        shot = random.choice(chamber)
 
         if shot == 1:
             print("💀 You are Dead 💀\n")
