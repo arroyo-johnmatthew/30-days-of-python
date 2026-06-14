@@ -5,5 +5,8 @@ import sys
 if len(sys.argv) != 2:
     sys.exit()
 
-response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
-print(json.dumps(response.json()))
+response = requests.get("https://itunes.apple.com/search?entity=song&limit=1000&term=" + sys.argv[1])
+name = response.json()
+
+for result in name["results"]:
+    print(result["trackName"])
