@@ -13,7 +13,7 @@ try:
 except ValueError:
     sys.exit("Command-line argument is not a number")
 
-# http get request from the server
+# http get request from the server using API key
 response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=e14647999e0018b436afce88cfeca71830417bc42650e63825a60bc337cc4394")
 # put the response in the price variable and convert it into a float
 price = float(response.json()["data"]["priceUsd"])
