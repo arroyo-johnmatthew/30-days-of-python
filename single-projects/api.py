@@ -20,4 +20,4 @@ price = float(response.json()["data"]["priceUsd"])
 
 # multiply the current bitcoin price usd by the user's bitcoin
 price = price * user_bitcoin
-print(f"{price:,.4f}")
+print(f"${price:,.4f}", end="")
