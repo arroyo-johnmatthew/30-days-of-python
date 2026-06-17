@@ -1,4 +1,4 @@
-from calculator import count_vowels
+from code_for_pytest import count_vowels
 
 def test_vowels():
     assert count_vowels("Hello") == 2
