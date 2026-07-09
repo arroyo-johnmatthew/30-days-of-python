@@ -23,26 +23,6 @@
 import sys
 from pygount import SourceAnalysis
 
-# # Checks if the argument is few or too many
-# if len(sys.argv) < 2:
-#     sys.exit("Too few command-line arguments")
-# elif len(sys.argv) > 2:
-#     sys.exit("Too many command-line aguments")
-
-# # Checks if the FILENAME exists in the directory
-# try:
-#     analysis = SourceAnalysis.from_file(sys.argv[1], "pythonfile") # type: ignore
-# except FileNotFoundError:
-#     sys.exit("File does not exist")
-
-# # Checks if the argument (FILENAME) is a python file
-# if not sys.argv[1].endswith(".py"):
-#     sys.exit("Not a python file")
-
-# # If all is well, write the output to the python file
-# with open(sys.argv[1], "a") as file:
-#     file.write(f"# {analysis.code_count}") # type: ignore
-
 def main():
     checkArgLen(sys.argv)
     result = checkFileNature(sys.argv[1])
