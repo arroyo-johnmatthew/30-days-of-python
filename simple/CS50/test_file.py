@@ -1,24 +1,24 @@
 import pytest
-from file import checkArgLen, checkFileNature
+from file import check_arg_len, count_loc
 
 def test_few_arg():
     with pytest.raises(SystemExit):
-        checkArgLen([''])
+        check_arg_len([''])
     with pytest.raises(SystemExit):
-        checkArgLen(['hello.py'])
+        check_arg_len(['hello.py'])
 
 def test_many_arg():
     with pytest.raises(SystemExit):
-        checkArgLen(['john', 'matthew', 'arroyo'])
+        check_arg_len(['john', 'matthew', 'arroyo'])
     with pytest.raises(SystemExit):
-        checkArgLen(['john', 'matthew', 'arroyo', 'john'])
+        check_arg_len(['john', 'matthew', 'arroyo', 'john'])
 
-def test_non_python_file():
+def test_non_python_files():
     with pytest.raises(SystemExit):
-        checkFileNature('test.txt')
+        count_loc("hello.txt")
     with pytest.raises(SystemExit):
-        checkFileNature('test.px')
+        count_loc("hello.px")
 
-def test_non_existent_file():
-    with pytest.raises(SystemExit):
-        checkFileNature('test_files.py')
+def test_loc():
+    assert count_loc("test_code.py") == 16
+    assert count_loc("file.py") == 28

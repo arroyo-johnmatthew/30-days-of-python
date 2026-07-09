@@ -21,31 +21,40 @@
 #     writer.writerow({"name": name, "home": home})
 
 import sys
-from pygount import SourceAnalysis
 
 def main():
-    checkArgLen(sys.argv)
-    result = checkFileNature(sys.argv[1])
+    check_arg_len(sys.argv)
+    print(count_loc(sys.argv[1]))
 
-    with open(sys.argv[1], "a") as file:
-        file.write(f"# {result.code_count}")
-
-def checkArgLen(item):
+def check_arg_len(item):
     if len(item) < 2:
         return sys.exit("Too few command-line arguments")
     elif len(item) > 2:
-        return sys.exit("Too many command-line aguments") 
+        return sys.exit("Too many command-line aguments")
 
-def checkFileNature(item):
-    try:
-        analysis = SourceAnalysis.from_file(item, "pythonfile")
-    except FileNotFoundError:
-        return sys.exit("File does not exist")
-    
+def count_loc(item):
     if not item.endswith(".py"):
-        return sys.exit("Not a python file")
-    
-    return analysis
+        sys.exit("Not a Python File")
+
+    count = 0
+
+    try:
+        with open(item, "r") as file:
+            for line in file:
+                line = line.strip()
+
+                # Checks for comments, whitespaces, docstrings
+                if line == "":
+                    continue
+                elif line.startswith("#"):
+                    continue
+                else:
+                    count += 1
+
+    except FileNotFoundError:
+        sys.exit("File not Found")
+
+    return count
 
 if __name__ == "__main__":
     main()
