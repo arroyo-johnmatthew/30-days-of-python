@@ -1,5 +1,5 @@
 import pytest
-from file import check_arg_len, count_loc
+from simple.CS50.FILEIO.file import check_arg_len, count_loc
 
 def test_few_arg():
     with pytest.raises(SystemExit):
