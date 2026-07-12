@@ -11,7 +11,15 @@ email = input("Email: ").strip()
 # '[]' set of chars
 # '[^]' complementing the set, for ex, '[^@]' means any string but not the '@'
 
-if re.search(r"^[^@]+@[^@]+\.edu$", email):
+# Additional symbols
+# '\d' decimal digit
+# '\D' not a decimal
+# '\s' whitespace chars
+# '\S' not a whitespace char
+# '\w' word chars as well as nums and the underscore
+# '\W' not a word char
+
+if re.search(r"^\w+@\w+\.edu$", email):
     print("Valid")
 else:
     print("Invalid")
