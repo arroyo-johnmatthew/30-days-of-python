@@ -1,7 +1,5 @@
 import re
 
-email = input("Email: ").strip()
-
 # '.' means any char
 # '*' 0 or more chars
 # '+' 1 or more chars
@@ -19,6 +17,13 @@ email = input("Email: ").strip()
 # '\S' not a whitespace char
 # '\w' word chars as well as nums and the underscore
 # '\W' not a word char
+
+# Group symbols
+# 'A|B' either A or B
+# '(...)' a group
+# '(?:...)' non capturing version
+
+email = input("Email: ").strip()
 
 if re.search(r"^\w+@(\w+\.)?\w+\.edu$", email, re.IGNORECASE):
     print("Valid")
