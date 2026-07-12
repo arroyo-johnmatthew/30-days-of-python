@@ -19,7 +19,7 @@ email = input("Email: ").strip()
 # '\w' word chars as well as nums and the underscore
 # '\W' not a word char
 
-if re.search(r"^\w+@\w+\.edu$", email):
+if re.search(r"^\w+@\w+\.edu$", email, re.IGNORECASE):
     print("Valid")
 else:
     print("Invalid")
