@@ -1,7 +1,7 @@
-import  re
+import re
 
 name = input("Enter your name: ").strip()
-matches = re.search(r"^(.+),\s?(.+)$", name)
+matches = re.search(r"^(.+), *(.+)$", name)
 
 if matches:
     name = matches.group(2) + " " + matches.group(1)
