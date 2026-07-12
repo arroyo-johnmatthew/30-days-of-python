@@ -1,9 +1,8 @@
 import re
 
 name = input("Enter your name: ").strip()
-matches = re.search(r"^(.+), *(.+)$", name)
 
-if matches:
+if matches := re.search(r"^(.+), *(.+)$", name):
     name = matches.group(2) + " " + matches.group(1)
 
 print(name)
