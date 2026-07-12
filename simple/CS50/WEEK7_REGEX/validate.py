@@ -8,6 +8,7 @@ email = input("Email: ").strip()
 # '\' esc char, use to differentiate '.' and literal '.'
 # '^' must match the start of the str
 # '$' must match the end of the str
+# '?' 0 or 1 chars, basically optional
 # '[]' set of chars
 # '[^]' complementing the set, for ex, '[^@]' means any string but not the '@'
 
@@ -19,7 +20,7 @@ email = input("Email: ").strip()
 # '\w' word chars as well as nums and the underscore
 # '\W' not a word char
 
-if re.search(r"^\w+@\w+\.edu$", email, re.IGNORECASE):
+if re.search(r"^\w+@(\w+\.)?\w+\.edu$", email, re.IGNORECASE):
     print("Valid")
 else:
     print("Invalid")
