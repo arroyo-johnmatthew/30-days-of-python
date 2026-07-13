@@ -10,3 +10,6 @@ def validate(email):
         return "Valid"
     else:
         return "Invalid"
+
+if __name__ == "__main__":
+    main()
