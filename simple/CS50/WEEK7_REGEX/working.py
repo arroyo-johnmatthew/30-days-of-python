@@ -19,7 +19,7 @@ def exist(sub):
         return sub
     else:
         return ":00"
-    
+
 def get_format(time, type):
     # Get conversion list for AM
     AM = {
@@ -28,7 +28,7 @@ def get_format(time, type):
         "8":"08","9":"09","10":"10","11":"11"
     }
 
-    # Get conversion list for PM 
+    # Get conversion list for PM
     PM = {
         "12":"12","1":"13","2":"14","3":"15",
         "4":"16","5":"17","6":"18","7":"19",
@@ -37,10 +37,8 @@ def get_format(time, type):
 
     if type == "AM":
         return AM[time]
-    elif type == "PM":
-        return PM[time]
     else:
-        return "incorrect time or type"
+        return PM[time]
 
 if __name__ == "__main__":
     main()
