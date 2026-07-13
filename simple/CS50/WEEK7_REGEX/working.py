@@ -5,9 +5,9 @@ def main():
 
 def convert(time):
                                 #1            #2          #3           #4            #5           #6
-    matches = re.search(r"^([1-9]|1[0-2])(\:[0-5][0-9])? (AM|PM) to ([0-1]?[0-9])(\:[0-5][0-9])? (AM|PM)$", time)
+    matches = re.search(r"^([1-9]|1[0-2])(\:[0-5][0-9])? (AM|PM) to ([1-9]|1[0-2])(\:[0-5][0-9])? (AM|PM)$", time)
 
-    if matches:
+    if matches: 
         time_one = get_format(matches.group(1), matches.group(3)) + exist(matches.group(2))
         time_two = get_format(matches.group(4), matches.group(6)) + exist(matches.group(5))
         return time_one + " to " + time_two
