@@ -1,3 +1,4 @@
+import pytest
 from um import count
 
 def test_count():
@@ -7,4 +8,7 @@ def test_count():
     assert count("Um, thanks, um...") == 2
     assert count("yummy") == 0
     assert count("yum") == 0
-    assert count("")
+    assert count("uM") == 1
+    assert count("UM") == 1
+    assert count("      um      ") == 1
+
