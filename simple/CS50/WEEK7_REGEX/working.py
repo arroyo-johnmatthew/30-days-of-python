@@ -37,8 +37,10 @@ def get_format(time, type):
 
     if type == "AM":
         return AM[time]
-    else:
+    elif type == "PM":
         return PM[time]
+    else:
+        return "incorrect time or type"
 
 if __name__ == "__main__":
     main()
