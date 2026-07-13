@@ -1,5 +1,5 @@
 import pytest
-from working import convert
+from working import convert, get_format
 
 def test_conversion():
     assert convert("9 AM to 5 PM") == ("09:00 to 17:00")
@@ -14,3 +14,15 @@ def test_error():
         convert("9 AM - 5 PM")
     with pytest.raises(ValueError):
         convert("09:00 AM - 17:00 PM")
+
+def test_format():
+    assert get_format("1", "PM") == "13"
+    assert get_format("1", "AM") == "01"
+    assert get_format("12", "PM") == "12"
+    assert get_format("12", "AM") == "00"
+    assert get_format("7", "PM") == "19"
+    assert get_format("7", "AM") == "07"
+    assert get_format("1", "am") == "incorrect time or type"
+    assert get_format("1", "pm") == "incorrect time or type"
+    assert get_format("1", "ampm") == "incorrect time or type"
+    
