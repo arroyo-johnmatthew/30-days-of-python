@@ -5,6 +5,9 @@ class Student:
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         
+        # self is basically the place holder for the object (variable)
+        # example, student = Student(name, house)
+        # "self.name = name" becomes "student.name = name"
         self.name = name
         self.house = house
 
