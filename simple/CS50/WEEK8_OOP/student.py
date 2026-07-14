@@ -46,7 +46,7 @@ class Student:
 
 def main():
     student = get_student()
-    student.house = "Number Four"
+    # NOTE why getter and setter exist: student.house = "Number Four"
     print(student)
 
 def get_student():
