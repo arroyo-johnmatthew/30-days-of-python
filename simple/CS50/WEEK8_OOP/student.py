@@ -2,8 +2,6 @@ class Student:
     def __init__(self, name, house):
         if not name:
             raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
         
         # self is basically the place holder for the object (variable)
         # example, student = Student(name, house)
@@ -11,22 +9,33 @@ class Student:
         self.name = name
         self.house = house
 
+    # Special method that whenever an object is only called, example:
+    # "print(student)" and not "print(student.name)"
+    # it will return the proper output as string
     def __str__(self):
         return f"{self.name} from {self.house}"
     
     # Getters
-    def get_house(self):
+    @property
+    def house(self):
         return self.house
     
     # Setters
-    def set_house(self, house):
+    @house.setter
+    def house(self, house):
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         
         self.house = house
 
+    # Basically setter will automatically run if there is a code like for example
+    # student.house = "Pasay" where if Python sees the "=" it will know that it is for setter
+    # situations like print(student.house) is where getter will do its job
+    # TAKE NOTE def names of the getter and setter must be the same
+
 def main():
     student = get_student()
+    student.house = "Number Four"
     print(student)
 
 def get_student():
