@@ -10,6 +10,8 @@ class Student:
 
         # the house setter will also run this because it sees "self.house" and
         # "=" so no need to place the ValueError raising inside this method!
+        # NOTE it will store its value on the setter method "self._house"
+        # NOTE in essence, this is just like a command calling the setter method
         self.house = house
 
     # Special method that whenever an object is only called, example:
@@ -21,7 +23,9 @@ class Student:
     # Getters
     @property
     def house(self):
-        return self.house
+        # with getters, if we use "self.house" it will run the getter function
+        # then reads the "self.house" again and repeat. So we use "_"
+        return self._house
     
     # Setters
     @house.setter
@@ -29,12 +33,15 @@ class Student:
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         
-        self.house = house
+        # we added "_" so that we avoid the issue of python reading this as
+        # "self.house = house" then it runs the setter func, goes back at the top
+        # of this func, sees the "self.house = house" again and repeat
+        self._house = house
 
     # Basically setter will automatically run if there is a code like for example
     # student.house = "Pasay" where if Python sees the "=" it will know that it is for setter
-    # situations like print(student.house) is where getter will do its job
-    # TAKE NOTE def names of the getter and setter must be the same
+    # situations like print(student.house) or student.house is where getter will do its job
+    # NOTE def names of the getter and setter must be the same
     # that must mean the it should also be the same for the __init__ method attributes (elf.house, self.name, etc)
 
 def main():
