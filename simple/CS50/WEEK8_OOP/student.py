@@ -7,6 +7,9 @@ class Student:
         # example, student = Student(name, house)
         # "self.name = name" becomes "student.name = name"
         self.name = name
+
+        # the house setter will also run this because it sees "self.house" and
+        # "=" so no need to place the ValueError raising inside this method!
         self.house = house
 
     # Special method that whenever an object is only called, example:
@@ -32,6 +35,7 @@ class Student:
     # student.house = "Pasay" where if Python sees the "=" it will know that it is for setter
     # situations like print(student.house) is where getter will do its job
     # TAKE NOTE def names of the getter and setter must be the same
+    # that must mean the it should also be the same for the __init__ method attributes (elf.house, self.name, etc)
 
 def main():
     student = get_student()
