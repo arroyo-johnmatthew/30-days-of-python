@@ -1,8 +1,5 @@
 class Student:
     def __init__(self, name, house):
-        if not name:
-            raise ValueError("Missing name")
-        
         # self is basically the place holder for the object (variable)
         # example, student = Student(name, house)
         # "self.name = name" becomes "student.name = name"
@@ -40,6 +37,17 @@ class Student:
         # of this func, sees the "self.house = house" again and repeat
         self._house = house
 
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing name")
+        
+        self._name = name
+    
     # Basically setter will automatically run if there is a code like for example
     # student.house = "Pasay" where if Python sees the "=" it will know that it is for setter
     # situations like print(student.house) or student.house is where getter will do its job
