@@ -30,6 +30,8 @@ class Student:
     # Setters
     @house.setter
     def house(self, house):
+        # house is the incoming value that someone is trying to submit
+        # so in 'student.house = "Pasay"', "Pasay" will be passed to house param
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         
