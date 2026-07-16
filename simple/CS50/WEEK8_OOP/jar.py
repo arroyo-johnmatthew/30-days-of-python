@@ -8,13 +8,13 @@ class Jar:
 
     def deposit(self, n):
         if n + self.size > self.capacity:
-            raise ValueError("Cant fit it all cuz")
+            raise ValueError("Cant fit it all those cookies!")
         else:
             self.size += n
 
     def withdraw(self, n):  
         if n > self.size:
-            raise ValueError("Not enough cookies to take lil bro")
+            raise ValueError("Not enough cookies to take!")
         else:
             self.size -= n
 
