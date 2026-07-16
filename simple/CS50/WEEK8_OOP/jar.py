@@ -25,9 +25,10 @@ class Jar:
     
     @capacity.setter
     def capacity(self, capacity):
-        if capacity <= 0:
+        if capacity < 0:
             raise ValueError("Capacity can't be a negative number!")
-        self._capacity = capacity
+        else:
+            self._capacity = capacity
 
     # Size GETTER and SETTER
     @property
