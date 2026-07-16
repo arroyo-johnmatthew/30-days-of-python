@@ -5,6 +5,10 @@ from jar import Jar
 def default_jar():
     return Jar()
 
+def jar_with_negative_capacity():
+    with pytest.raises(ValueError):
+        Jar(-1)
+
 def test_init(default_jar):
     assert default_jar.capacity == 12
 
