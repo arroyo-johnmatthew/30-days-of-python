@@ -5,11 +5,14 @@ from jar import Jar
 def default_jar():
     return Jar()
 
+def test_init(default_jar):
+    assert default_jar.capacity == 12
+
 def test_str(default_jar):
     assert str(default_jar) == ""
-    default_jar.deposit(5) 
+    default_jar.deposit(5)
     assert str(default_jar) == "🍪🍪🍪🍪🍪"
-    default_jar.deposit(2) 
+    default_jar.deposit(2)
     assert str(default_jar) == "🍪🍪🍪🍪🍪🍪🍪"
 
 def test_deposit(default_jar):
@@ -40,7 +43,3 @@ def test_withdraw(default_jar):
     default_jar.deposit(10)
     with pytest.raises(ValueError, match="Not enough cookies to take!"):
         default_jar.withdraw(11)
-
-
-
-
