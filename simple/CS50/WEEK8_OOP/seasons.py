@@ -1,5 +1,6 @@
 import re
 import sys
+import inflect
 from datetime import date
 
 def main():
@@ -14,10 +15,15 @@ def main():
 
     # Create date object then subtract it with the current date
     age_in_mins = get_age_in_min(date.today(), birthdate)
+    print(num_to_words(age_in_mins))
     
 def get_age_in_min(current, bday):
     diff = current - bday
     return diff.days * 24 * 60
+
+def num_to_words(num):
+    p = inflect.engine()
+    return f"{str(p.number_to_words(num)).capitalize()} minutes"
 
 def get_format():
     return r"^([1-9][0-9]{3})-((?:0[1-9]|1[0-2]))-((?:0[1-9]|[12][0-9]|3[01]))$"
