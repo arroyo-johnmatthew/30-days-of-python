@@ -9,5 +9,7 @@ root.title("CS50 Final Project")
 icon = tk.PhotoImage(file="assets/luffy.png")
 root.iconphoto(True, icon)
 
+root.config(background="gray")
+
 # Run the root gui
 root.mainloop()
