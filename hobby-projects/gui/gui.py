@@ -28,27 +28,38 @@ def main():
     label.pack(pady=20)
 
     # set the buttons
-    for i in ["Tax Calculator", "Setup Your Government Contributions", "Others"]:
-        button = tk.Button(main_frame,
-                        text=i, 
-                        font=("Arial", 11, "bold"), 
-                        width=10,
-                        relief="raised",
-                        bg="#a9d6e5",
-                        activebackground="white",
-                        activeforeground="#a9d6e5",
-                        fg="white",
-                        command=lambda: switch_frame(val_frame, main_frame),
-                        cursor="hand2",
-                        bd=0,
-                        padx=20)
-        button.pack(pady=8)
+    button = tk.Button(main_frame,
+                    text="Tax Calculator", 
+                    font=("Arial", 11, "bold"), 
+                    width=10,
+                    relief="raised",
+                    bg="#a9d6e5",
+                    activebackground="white",
+                    activeforeground="#a9d6e5",
+                    fg="white",
+                    command=lambda: switch_frame(val_frame, main_frame),
+                    cursor="hand2",
+                    bd=0,
+                    padx=20)
+    button.pack(pady=8)
+
+    button = tk.Button(main_frame,
+                    text="Setup Your Government Contributions", 
+                    font=("Arial", 11, "bold"), 
+                    relief="flat",
+                    activebackground="white",
+                    activeforeground="#5c5d5e",
+                    bg="white",
+                    fg="#5c5d5e",
+                    command=lambda: switch_frame(val_frame, main_frame),
+                    cursor="hand2",
+                    bd=0,
+                    padx=20)
+    button.pack(pady=15, side="bottom")
 
     # =====================    VALIDATION FRAME  =============================  
     val_frame = tk.Frame(root)
     val_frame.config(bg="white")
-    label = tk.Label(val_frame, text="Hello World", bg="white")
-    label.pack()
     button = tk.Button(val_frame,
                         text="⬅️ Return to Menu", 
                         font=("Arial", 11, "bold"), 
